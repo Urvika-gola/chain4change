@@ -1,8 +1,8 @@
 pragma solidity ^0.4.18;
 contract DiamondContract {
-  struct GHG {
-    uint carbon;
-}
+  /*struct GHG {
+    int carbon;
+}*/
 
  struct Diamond {
     uint reportNumber;
@@ -13,7 +13,7 @@ contract DiamondContract {
     int loc_2;
     int loc_3;
     int loc_4;
-    GHG ghgFootprint;
+    int Footprint;
   }
   mapping (uint => Diamond) diamondList;
   function createDiamond(uint _id, uint _reportNumber
@@ -23,7 +23,8 @@ contract DiamondContract {
     int _loc_1,
     int _loc_2,
     int _loc_3,
-    int _loc_4) public returns (bool) {
+    int _loc_4,
+    int _footprint) public returns (bool) {
     diamondList[_id] = Diamond({
     reportNumber: _reportNumber,
     miles_travelled: _miles_travelled,
@@ -33,20 +34,16 @@ contract DiamondContract {
     loc_2: _loc_2,
     loc_3: _loc_3,
     loc_4: _loc_4,
-    ghgFootprint: GHG({
-        carbon: 0
-      })
+    Footprint: _footprint
     });
     return true;
   }
-  function getGHGFootprint(uint _id) public constant returns (uint) {
-    uint _carbon = diamondList[_id].ghgFootprint.carbon;
+  function getGHGFootprint(uint _id) public constant returns (int) {
+    int _carbon = diamondList[_id].Footprint;
     return (_carbon);
   }
-  function updateGHGFootprint(uint _id, uint _carbon) public returns(bool) {
-    diamondList[_id].ghgFootprint.carbon = diamondList[_id].ghgFootprint.carbon + _carbon;
-  }
-  /*function getReport(uint _id) public constant returns (string, uint, string) {
+  
+ /*function getReport(uint _id) public constant returns (string, uint, string) {
     string storage _shapeStyle = diamondList[_id].shapeStyle;
     uint _caratWeight = diamondList[_id].caratWeight;
     string storage _cutGrade = diamondList[_id].cutGrade;

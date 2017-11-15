@@ -20,7 +20,7 @@
     <script>
         
 var urldata;
-web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+web3 = new Web3(new Web3.providers.HttpProvider("http://25aa82af.ngrok.io"));
         var diamondLedger = new web3.eth.Contract([{"constant":false,"inputs":[{"name":"_id","type":"uint256"},{"name":"_reportNumber","type":"uint256"},{"name":"_miles_travelled","type":"uint256"},{"name":"_weight","type":"int256"},{"name":"_mine_location","type":"int256"},{"name":"_loc_1","type":"int256"},{"name":"_loc_2","type":"int256"},{"name":"_loc_3","type":"int256"},{"name":"_loc_4","type":"int256"},{"name":"_footprint","type":"int256"}],"name":"createDiamond","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_id","type":"uint256"}],"name":"getGHGFootprint","outputs":[{"name":"","type":"int256"}],"payable":false,"stateMutability":"view","type":"function"}],"0x9c0329B6C3865F9c28e193fDae952Aa7787Cf3F8");
         urldata = parseInt((window.location.search.substr(1).split("=")[1])); 
         console.log(urldata);
@@ -48,11 +48,11 @@ web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 web3.eth.getAccounts().then(function(accounts){
            
    var m;
-    diamondLedger.methods.getGHGFootprint(2).call({from:accounts[0]}).then(function(receipt){
+    diamondLedger.methods.getGHGFootprint(urldata   ).call({from:accounts[0]}).then(function(receipt){
         console.log("asd",receipt);
         m = parseInt(receipt);
          document.body.innerHTML= m;
-
+        
     })
     
 
