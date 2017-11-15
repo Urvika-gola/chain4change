@@ -14,19 +14,56 @@
 
 
     
-    <!-- Interaction with the blockchain -->
-    <script src="h4c-sol-connection.js"></script>
+  <!-- Interaction with the blockchain -->
+  <!--  <script src="h4c-sol-connection.js"></script> -->
 
     <script>
+        
+
+web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+        var diamondLedger = new web3.eth.Contract([{"constant":false,"inputs":[{"name":"_id","type":"uint256"},{"name":"_reportNumber","type":"uint256"},{"name":"_miles_travelled","type":"uint256"},{"name":"_weight","type":"int256"},{"name":"_mine_location","type":"int256"},{"name":"_loc_1","type":"int256"},{"name":"_loc_2","type":"int256"},{"name":"_loc_3","type":"int256"},{"name":"_loc_4","type":"int256"}],"name":"createDiamond","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_id","type":"uint256"},{"name":"_carbon","type":"uint256"}],"name":"updateGHGFootprint","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"p1","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_id","type":"uint256"}],"name":"getGHGFootprint","outputs":[{"name":"","type":"int256"}],"payable":false,"stateMutability":"view","type":"function"}],"0x4fD256996e62f208Aac20dbA34b097D71c4bD90f");
         var urldata = (window.location.search.substr(1).split("=")); 
         document.body.innerHTML=urldata[1];
         
-        web3.eth.getAccounts().then(function(accounts){
-            diamondLedger.methods.getGHGFootprint(14).call({from:accounts[0]}).then(function(receipt){
+         /* web3.eth.getAccounts().then(function(accounts){
+          const Diamond = diamondLedger.deploy({
+              data: "6060604052341561000f57600080fd5b6103058061001e6000396000f300606060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063356d81d6146100675780633d7a94b2146100ea578063c2a2747b1461012e578063c6323e4614610157575b600080fd5b341561007257600080fd5b6100d0600480803590602001909190803590602001909190803590602001909190803590602001909190803590602001909190803590602001909190803590602001909190803590602001909190803590602001909190505061018e565b604051808215151515815260200191505060405180910390f35b34156100f557600080fd5b610114600480803590602001909190803590602001909190505061026d565b604051808215151515815260200191505060405180910390f35b341561013957600080fd5b6101416102ac565b6040518082815260200191505060405180910390f35b341561016257600080fd5b61017860048080359060200190919050506102b5565b6040518082815260200191505060405180910390f35b6000610120604051908101604052808a815260200189815260200188815260200187815260200186815260200185815260200184815260200183815260200160206040519081016040528060008152508152506000808c8152602001908152602001600020600082015181600001556020820151816001015560408201518160020155606082015181600301556080820151816004015560a0820151816005015560c0820151816006015560e0820151816007015561010082015181600801600082015181600001555050905050600190509998505050505050505050565b60008160008085815260200190815260200160002060080160000154016000808581526020019081526020016000206008016000018190555092915050565b6000602c905090565b600080600080848152602001908152602001600020600201549050809150509190505600a165627a7a723058203ad64af6b86e1732801077cb4db3b7e4bc40b86c7227e109c20f01151d880aaf0029",
+          }).send({
+              from: accounts[0],
+              gas: 1500000,
+              gasPrice: "30000000000000"
+          }, function(error, transactionHash) {
+              if(error) {console.log(error)}
+              console.log(transactionHash)
+          }).on('receipt', function(receipt){
+              console.log(receipt)
+          })
+        })*/
+        
+        
+        
+
+       // contractInstance = diamondLedger.at("0x4fD256996e62f208Aac20dbA34b097D71c4bD90f")
+
+    
+web3.eth.getAccounts().then(function(accounts){
+            diamondLedger.methods.createDiamond(110,10,10,10,33,10,10,10,10).call({from:accounts[0]}).then(function(receipt){
+                
+                
                 console.log("asdf",receipt)
             })
-        })
-s
+   
+    diamondLedger.methods.getGHGFootprint(110).call({from:accounts[0]}).then(function(receipt){
+                console.log("asdf",receipt)
+            })
+    
+    //111
+    
+    
+})
+       
+ 
+  
     </script>
 
 </body>

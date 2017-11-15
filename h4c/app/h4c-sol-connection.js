@@ -1,6 +1,8 @@
-   web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+<script src="web3.min.js"></script>
+
+web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 var address = '0xf1874128fba169f80093e099ecf6a129f50df109';
-        
+
 var diamondLedger = new web3.eth.Contract([{"constant":false,"inputs":[{"name":"_id","type":"uint256"},{"name":"_reportNumber","type":"uint256"},{"name":"_miles_travelled","type":"uint256"},{"name":"_weight","type":"int256"},{"name":"_mine_location","type":"int256"},{"name":"_loc_1","type":"int256"},{"name":"_loc_2","type":"int256"},{"name":"_loc_3","type":"int256"},{"name":"_loc_4","type":"int256"}],"name":"createDiamond","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_id","type":"uint256"},{"name":"_carbon","type":"uint256"}],"name":"updateGHGFootprint","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_id","type":"uint256"}],"name":"getGHGFootprint","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}], "0x8280D12608e8799dd32Dea204e61594E7f734d07");
         
         //console.log("asdf",DiamondContract)

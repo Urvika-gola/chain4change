@@ -16,17 +16,55 @@ var cut_machine_power;
 var polish_machine_power;
 
 // global struct of the type present on the chian
-var _diamond = {
-	'miles_travelled':1,
+
+/*var _diamond = {
+	'_id':2,
+	'_reportNumber':2,
+	'miles_travelled':6389,
+	'weight':2,
+	'mine_Location':"Apollo",
+	'loc_1':12,
+	'loc_2':43,
+	'loc_3':6,
+	'loc_4':36
+};*/
+
+/*var _diamond = {
+	'_id':3,
+	'_reportNumber':3,
+	'miles_travelled':689,
 	'weight':1,
-	'mine_Location':"diavik",
+	'mine_Location':"Namibia_Coast",
+	'loc_1':12,
+	'loc_2':43,
+	'loc_3':6,
+	'loc_4':36
+};*/
+/*
+var _diamond = {
+	'_id':4,
+	'_reportNumber':4,
+	'miles_travelled':1256,
+	'weight':2,
+	'mine_Location':"synthetic_HPHT_GEMESIS",
 	'loc_1':12,
 	'loc_2':43,
 	'loc_3':6,
 	'loc_4':36
 };
-var _car = {'miles_travelled':11,
-	'type':111};
+*/
+var _diamond = {
+	'_id':5,
+	'_reportNumber':5,
+	'miles_travelled':2689,
+	'weight':1,
+	'mine_Location':"Argyle",
+	'loc_1':12,
+	'loc_2':43,
+	'loc_3':6,
+	'loc_4':36
+}
+
 
 ////fetch the struct and put it into the global
 
@@ -134,10 +172,8 @@ function Carbon_footprint_mining(){
 function GetFootPrint()
 {
 Set_Effective_Weight();
-console.log(transport_footprint());
+/*console.log(transport_footprint());
    console.log(CutAndPolish());
-console.log(Carbon_footprint_mining());
-
-      // return (transport_footprint() + CutAndPolish() + Carbon_footprint_mining());
-return 5;
+console.log(Carbon_footprint_mining());*/
+return (transport_footprint() + CutAndPolish() + Carbon_footprint_mining());
 }

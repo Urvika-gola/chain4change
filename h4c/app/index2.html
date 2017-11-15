@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+    <script src="web3.min.js"></script>
+</head>
+<body>
+
+
+    
+    <!-- Interaction with the blockchain -->
+    <script src="h4c-sol-connection.js"></script>
+
+    <script>
+        var urldata = (window.location.search.substr(1).split("=")); 
+        document.body.innerHTML=urldata[1];
+        
+        web3.eth.getAccounts().then(function(accounts){
+            diamondLedger.methods.getDiamond(getGHGFootprint).call({from:accounts[0]}).then(function(receipt){
+                console.log("asdf",receipt)
+            })
+        })
+s
+    </script>
+
+</body>
+</html>

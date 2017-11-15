@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#000000"
+    tools:layout_editor_absoluteY="8dp"
+    tools:layout_editor_absoluteX="8dp">
+    <ImageView
+        android:id="@+id/imageviewhandler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+
+        tools:ignore="ContentDescription"
+        android:background="@drawable/frame_0_delay"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="25dp"
+        android:backgroundTint="@color/black"
+        android:background="@color/black">
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  Find "
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Green "
+            android:textColor="#2ECC71"
+            android:textSize="40sp" />
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diamond "
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="90dp"
+        android:orientation="vertical">
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:mtf_labelColor="@color/white"
+        android:layout_marginTop="50dp"
+        app:mtf_image="@drawable/diamondtext"
+        android:id="@+id/edittext1">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/diamondid1"
+        android:hint="First Diamond ID"
+        android:textColorHint="@color/white"
+        android:inputType="textCapCharacters"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/black"
+        android:background="@color/black"/>
+
+</com.github.florent37.materialtextfield.MaterialTextField>
+
+    <TextView
+        android:id="@+id/vs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:hint="VS"
+        android:inputType="textCapCharacters"
+        android:textColorHint="@color/white"
+        android:textSize="40sp"
+        android:layout_marginBottom="30dp"/>
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mtf_labelColor="@color/white"
+        app:mtf_image="@drawable/diamondtext"
+        android:id="@+id/edittext2">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/diamondid2"
+            android:hint="Second Diamond ID"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white"
+            android:backgroundTint="@color/black"
+            android:background="@color/black"
+            android:inputType="textCapCharacters"
+            android:textSize="15sp" />
+    </com.github.florent37.materialtextfield.MaterialTextField>
+</LinearLayout>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/mLlayoutBottomButtons" >
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/mLlayoutBottomButtons"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+        <com.andexert.library.RippleView
+            android:id="@+id/more"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            android:layout_toLeftOf="@+id/more2"
+            android:layout_margin="5dp"
+            app:rv_color="@color/colorPrimaryDark"
+            app:rv_rippleDuration="400"
+            app:rv_alpha="244"
+            rv_centered="true">
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Check"
+                android:backgroundTint="@color/black"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:layout_centerInParent="true"
+                android:textSize="20dp"
+                android:background="?android:attr/selectableItemBackground" />
+        </com.andexert.library.RippleView>
+    </LinearLayout>
+
+</RelativeLayout>
+</RelativeLayout>
