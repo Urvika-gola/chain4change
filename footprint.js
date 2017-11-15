@@ -1,5 +1,4 @@
-
-	var Power_Coal=1001;
+var Power_Coal=1001;
 	var Power_Wind= 12;
 	var Power_Solar= 46;
 	var Power_Hydroelectric= 4;
@@ -40,7 +39,7 @@ var polish_machine_power;
 	'loc_3':6,
 	'loc_4':36
 };*/
-/*
+
 var _diamond = {
 	'_id':4,
 	'_reportNumber':4,
@@ -52,8 +51,8 @@ var _diamond = {
 	'loc_3':6,
 	'loc_4':36
 };
-*/
-var _diamond = {
+
+/*var _diamond = {
 	'_id':5,
 	'_reportNumber':5,
 	'miles_travelled':2689,
@@ -63,7 +62,7 @@ var _diamond = {
 	'loc_2':43,
 	'loc_3':6,
 	'loc_4':36
-}
+}*/
 
 
 ////fetch the struct and put it into the global
@@ -172,8 +171,8 @@ function Carbon_footprint_mining(){
 function GetFootPrint()
 {
 Set_Effective_Weight();
-/*console.log(transport_footprint());
+console.log(transport_footprint());
    console.log(CutAndPolish());
-console.log(Carbon_footprint_mining());*/
-return (transport_footprint() + CutAndPolish() + Carbon_footprint_mining());
+console.log(Carbon_footprint_mining());
+return (transport_footprint() + CutAndPolish() + ((Carbon_footprint_mining())/1000));
 }
